@@ -144,3 +144,12 @@ The client doesn’t need to know which Pod got the request.
 
 ## Summary
 A Kubernetes Service is a **stable, named networking endpoint** that abstracts away the fact that Pods are dynamic. It enables reliable service-to-service communication inside the cluster and provides common patterns for internal and external exposure.
+
+---
+
+## So what should you use?
+
+- Want internal-only traffic: ClusterIP
+- Want external access quickly (dev / simple): NodePort
+- Want external access in cloud with minimal fuss: LoadBalancer
+- Want clean HTTP/HTTPS exposure with domains, TLS, path routing: Ingress (backed by ClusterIP Services)
