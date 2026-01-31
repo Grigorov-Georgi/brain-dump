@@ -24,6 +24,7 @@ nav:
     - java/index.md
   - Kubernetes:
     - k8s/building-block.md
+    - k8s/services.md
   - Project Ideas:
     - project_ideas/gc.md
     - project_ideas/order-book.md
