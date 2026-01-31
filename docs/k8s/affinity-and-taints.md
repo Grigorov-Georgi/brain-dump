@@ -1,14 +1,14 @@
-# Kubernetes Affinity and Node Taints
+# Affinity and Node Taints
 
-## Overview
+## 1. Overview
 
-Kubernetes provides mechanisms to control **where Pods are scheduled**: affinity rules influence placement based on labels, while taints prevent Pods from being scheduled on specific nodes.
+There are mechanisms to control **where Pods are scheduled**: affinity rules influence placement based on labels, while taints prevent Pods from being scheduled on specific nodes.
 
 ---
 
-## Pod Affinity & Anti-Affinity
+## 2. Pod Affinity & Anti-Affinity
 
-### Pod Affinity (Co-location)
+### 2.1 Pod Affinity (Co-location)
 
 **Pod affinity** schedules Pods **together** based on labels.
 
@@ -24,7 +24,7 @@ affinity:
         topologyKey: kubernetes.io/hostname
 ```
 
-### Pod Anti-Affinity (Separation)
+### 2.2 Pod Anti-Affinity (Separation)
 
 **Pod anti-affinity** schedules Pods **apart** to avoid single points of failure.
 
@@ -48,7 +48,7 @@ affinity:
 
 ---
 
-## Node Affinity
+## 3. Node Affinity
 
 **Node affinity** schedules Pods on nodes with specific labels.
 
@@ -68,9 +68,9 @@ affinity:
 
 ---
 
-## Node Taints & Tolerations
+## 4. Node Taints & Tolerations
 
-### Taints (Node-Level)
+### 4.1 Taints (Node-Level)
 
 A **taint** marks a node as "unwanted" for most Pods.
 
@@ -85,7 +85,7 @@ kubectl taint nodes node1 dedicated=database:NoSchedule
 - `PreferNoSchedule`: Try to avoid scheduling
 - `NoExecute`: Evict existing Pods that don't tolerate
 
-### Tolerations (Pod-Level)
+### 4.2 Tolerations (Pod-Level)
 
 A **toleration** allows a Pod to be scheduled on a tainted node.
 
@@ -99,7 +99,7 @@ tolerations:
 
 ---
 
-## Quick Mental Model
+## 5. Quick Mental Model
 
 - **Affinity**: "I want to be with/away from Pods/nodes matching these labels"
 - **Taints**: "Don't schedule Pods here unless they explicitly tolerate"
@@ -107,7 +107,7 @@ tolerations:
 
 ---
 
-## Common Patterns
+## 6. Common Patterns
 
 1. **High availability**: Use pod anti-affinity to spread replicas
 2. **Dedicated nodes**: Taint nodes, add tolerations to privileged Pods
@@ -116,7 +116,7 @@ tolerations:
 
 ---
 
-## Summary
+## 7. Summary
 
 - **Affinity**: Influences Pod placement based on labels (can be required or preferred)
 - **Anti-affinity**: Keeps Pods apart (critical for HA)

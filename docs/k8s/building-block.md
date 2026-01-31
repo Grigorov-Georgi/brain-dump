@@ -1,12 +1,12 @@
-# Kubernetes Building Blocks
+# Building Blocks
 
-This document explains the core Kubernetes (K8s) building blocks—**cluster**, **node**, **namespace**, **pod**, and **containers in pods**—and how they relate to each other.
+This document explains the core building blocks—**cluster**, **node**, **namespace**, **pod**, and **containers in pods**—and how they relate to each other.
 
 ---
 
-## Cluster
+## 1. Cluster
 
-A **Kubernetes cluster** is the whole system that runs your applications.
+A **cluster** is the whole system that runs your applications.
 
 It includes:
 
@@ -18,7 +18,7 @@ A cluster is like a "data center abstraction." You tell the cluster what you wan
 
 ---
 
-## Node
+## 2. Node
 
 A **node** is a single machine (physical or virtual) that runs workloads.
 
@@ -26,14 +26,14 @@ A node typically provides:
 
 - CPU, memory, networking
 - A container runtime (e.g., containerd)
-- A Kubernetes agent (`kubelet`) that makes sure the right pods/containers run on the node
+- An agent (`kubelet`) that makes sure the right pods/containers run on the node
 
 **Key point:**  
 Pods are scheduled onto **nodes**. Nodes are the "execution environment" for pods.
 
 ---
 
-## Namespace
+## 3. Namespace
 
 A **namespace** is a logical partition inside a cluster used to organize and isolate resources.
 
@@ -45,14 +45,14 @@ Namespaces help with:
 - **Name scoping** (many resource names must be unique *only within* a namespace)
 
 **Key point:**  
-Most Kubernetes resources (like Pods, Services, Deployments) live **in a namespace**.  
+Most resources (like Pods, Services, Deployments) live **in a namespace**.  
 Nodes do **not** belong to a namespace (nodes are cluster-scoped).
 
 ---
 
-## Pod
+## 4. Pod
 
-A **pod** is the smallest deployable unit in Kubernetes.  
+A **pod** is the smallest deployable unit.  
 It represents one or more containers that must run together.
 
 A pod provides:
@@ -63,14 +63,14 @@ A pod provides:
 - A single scheduling unit (the scheduler places the whole pod on one node)
 
 **Key point:**  
-Kubernetes schedules **pods**, not individual containers.
+The scheduler places **pods**, not individual containers.
 
 ---
 
-## Containers in Pods
+## 5. Containers in Pods
 
 A **container** is a packaged application process (image + runtime environment).  
-In Kubernetes, containers are almost always run **inside pods**.
+Containers are almost always run **inside pods**.
 
 ### Why multiple containers in a pod?
 
@@ -90,9 +90,9 @@ In Kubernetes, containers are almost always run **inside pods**.
 
 ---
 
-## How They Connect
+## 6. How They Connect
 
-### Big Picture Hierarchy
+### 6.1 Big Picture Hierarchy
 
 - A **cluster** contains:
   - **nodes** (machines)
@@ -104,7 +104,7 @@ In Kubernetes, containers are almost always run **inside pods**.
 - A **pod** runs on:
   - **exactly one node** at a time (it can be rescheduled to another node if recreated)
 
-### Important "Scope" Rules
+### 6.2 Important "Scope" Rules
 
 - **Cluster-scoped:** Nodes (and some resources like PersistentVolumes, ClusterRoles)
 - **Namespace-scoped:** Pods, Services, Deployments, ConfigMaps, Secrets, etc.
@@ -112,12 +112,12 @@ In Kubernetes, containers are almost always run **inside pods**.
 So:
 
 - You choose a namespace to organize workloads.
-- Kubernetes schedules your pods onto nodes.
+- The scheduler places your pods onto nodes.
 - Each pod runs one or more containers.
 
 ---
 
-## Concrete Example
+## 7. Concrete Example
 
 Imagine this setup:
 
@@ -131,14 +131,14 @@ In namespace `payments` you might have a pod:
   - **Container 1:** `app` (your API server)
   - **Container 2:** `proxy` (a sidecar proxy for mTLS/traffic)
 
-Kubernetes schedules that pod onto (say) `node-b`.  
+The scheduler places that pod onto (say) `node-b`.  
 Both containers run on `node-b`, inside the same pod network identity.
 
 ---
 
-## Quick Mental Model
+## 8. Quick Mental Model
 
-- **Cluster:** the whole Kubernetes environment
+- **Cluster:** the whole environment
 - **Node:** a machine where workloads run
 - **Namespace:** a folder-like partition to group/isolate resources
 - **Pod:** the smallest scheduled unit; a wrapper around one or more containers
@@ -146,10 +146,10 @@ Both containers run on `node-b`, inside the same pod network identity.
 
 ---
 
-## Summary Diagram
+## 9. Summary Diagram
 
 ```
-Kubernetes Cluster
+Cluster
 ├── Nodes (machines)
 │   ├── Node A
 │   └── Node B
@@ -165,7 +165,7 @@ Kubernetes Cluster
 
 ---
 
-## Common Misconceptions
+## 10. Common Misconceptions
 
 1. **"A namespace is a node group."**  
    No—namespaces are logical; nodes are physical/virtual machines.

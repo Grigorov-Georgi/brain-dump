@@ -19,17 +19,17 @@ theme:
 nav:
   - Home: index.md
   - General:
-    - general/snowflake.md
+    - "1. Snowflake ID": general/snowflake.md
   - Java:
-    - java/index.md
+    - "1. Java Knowledge": java/index.md
   - Kubernetes:
-    - k8s/building-block.md
-    - k8s/services.md
-    - k8s/clusterip-vs-loadbalancer.md
-    - k8s/affinity-and-taints.md
+    - "1. Building Blocks": k8s/building-block.md
+    - "2. Service": k8s/services.md
+    - "3. ClusterIP vs LoadBalancer": k8s/clusterip-vs-loadbalancer.md
+    - "4. Affinity and Node Taints": k8s/affinity-and-taints.md
   - Project Ideas:
-    - project_ideas/gc.md
-    - project_ideas/order-book.md
+    - "1. Toy Garbage Collector": project_ideas/gc.md
+    - "2. Order Book": project_ideas/order-book.md
 
 markdown_extensions:
   - pymdownx.highlight

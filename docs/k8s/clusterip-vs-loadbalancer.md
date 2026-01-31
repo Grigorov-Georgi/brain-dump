@@ -8,7 +8,7 @@ Let's say we have a Pod A which has 3 instances and then Pod B which relies on P
 
 **You do not need a LoadBalancer for Pod B to call Pod A inside the cluster.**
 
-Create a **ClusterIP Service** for A, and B calls the Service name. Kubernetes will load-balance the requests across A's 3 pod instances automatically.
+Create a **ClusterIP Service** for A, and B calls the Service name. The system will load-balance the requests across A's 3 pod instances automatically.
 
 ---
 
@@ -52,5 +52,5 @@ For **internal B→A calls**, ClusterIP is the standard.
 ## Summary
 
 - ✅ **ClusterIP**: Use for internal pod-to-pod communication within the cluster
-- ✅ **Automatic load balancing**: Kubernetes handles it via the Service
+- ✅ **Automatic load balancing**: Handled automatically via the Service
 - ❌ **LoadBalancer**: Only needed for external access from outside the cluster
