@@ -2,12 +2,11 @@
 
 Welcome to my knowledge base and project ideas repository.
 
-## Knowledge
-
-Explore various topics and concepts I've documented:
+## Topics
 
 - **General**: General knowledge and concepts
 - **Java**: Java-specific knowledge
+- **Kubernetes**: Kubernetes concepts and building blocks
 
 ## Project Ideas
 

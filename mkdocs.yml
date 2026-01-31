@@ -18,11 +18,12 @@ theme:
 
 nav:
   - Home: index.md
-  - Knowledge:
-    - General:
-      - knowledge/general/snowflake.md
-    - Kubernetes:
-      - knowledge/k8s/building-block.md
+  - General:
+    - general/snowflake.md
+  - Java:
+    - java/index.md
+  - Kubernetes:
+    - k8s/building-block.md
   - Project Ideas:
     - project_ideas/gc.md
     - project_ideas/order-book.md
