@@ -1,0 +1,36 @@
+site_name: Brain Dump
+site_description: Knowledge base and project ideas
+site_author: Georgi Grigorov
+
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+
+nav:
+  - Home: index.md
+  - Knowledge:
+    - General:
+      - knowledge/general/snowflake.md
+  - Project Ideas:
+    - project_ideas/gc.md
+    - project_ideas/order-book.md
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
+
+plugins:
+  - search
