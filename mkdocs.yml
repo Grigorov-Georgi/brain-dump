@@ -21,6 +21,8 @@ nav:
   - Knowledge:
     - General:
       - knowledge/general/snowflake.md
+    - Kubernetes:
+      - knowledge/k8s/building-block.md
   - Project Ideas:
     - project_ideas/gc.md
     - project_ideas/order-book.md
