@@ -26,6 +26,7 @@ nav:
     - k8s/building-block.md
     - k8s/services.md
     - k8s/clusterip-vs-loadbalancer.md
+    - k8s/affinity-and-taints.md
   - Project Ideas:
     - project_ideas/gc.md
     - project_ideas/order-book.md
