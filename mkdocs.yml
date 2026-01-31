@@ -27,6 +27,7 @@ nav:
     - "2. Service": k8s/services.md
     - "3. ClusterIP vs LoadBalancer": k8s/clusterip-vs-loadbalancer.md
     - "4. Affinity and Node Taints": k8s/affinity-and-taints.md
+    - "5. Topology Spread Constraints": k8s/topology-spread.md
   - Project Ideas:
     - "1. Toy Garbage Collector": project_ideas/gc.md
     - "2. Order Book": project_ideas/order-book.md
