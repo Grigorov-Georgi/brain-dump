@@ -20,6 +20,7 @@ nav:
   - Home: index.md
   - CLI:
     - "1. ripgrep": cli/ripgrep.md
+    - "2. curl": cli/curl.md
   - General:
     - "1. Snowflake ID": general/snowflake.md
   - Java:
