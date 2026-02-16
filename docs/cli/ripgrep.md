@@ -38,13 +38,7 @@ rg clap -Trust
 rg clap -g '*.toml'
 ```
 
-## Note on `-trust` / `-Trust`
+## Type: `-t rust` / `-T rust`
 
-`-trust` and `-Trust` are not valid ripgrep flags in the manpage/docs. If they come from an alias or plugin (or you meant something else), check:
-
-```bash
-rg --help | rg -i trust
-rg --help | rg -i "ignore|hidden|no-ignore|unrestricted|threads|pcre|type|glob"
-```
-
-If you know what you intended those to do, replace them with the correct ripgrep flags.
+- **`-t rust`, `-trust`** — Match only in Rust files (`-t` = `--type`).
+- **`-T rust`, `-Trust`** — Negation: exclude Rust files (`-T` = `--type-not`).
