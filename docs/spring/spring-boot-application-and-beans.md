@@ -29,6 +29,17 @@ So a class annotated with `@SpringBootApplication` is both a configuration class
 
 ---
 
+## Separate @Configuration classes with custom beans
+
+You don’t have to define all `@Bean` methods on the main `@SpringBootApplication` class. You can use **separate classes annotated with @Configuration** that hold custom bean definitions.
+
+- **Discovery:** Because `@Configuration` is meta-annotated with `@Component`, these classes are picked up by component scanning (same as your main class’s package and sub-packages). No extra registration needed.
+- **Role:** Each such class is a dedicated place for `@Bean` methods. Spring creates a CGLIB-enhanced proxy for the class so that multiple calls to the same `@Bean` method return the same singleton instance (when the bean is singleton).
+- **Why use them:** Keeps the main class small, groups related beans (e.g. `WebConfig`, `SecurityConfig`, `RedisConfig`), and allows conditional configuration (e.g. `@Configuration` + `@ConditionalOnProperty`) so a whole set of beans is only loaded when needed.
+- **Example:** A class in a scanned package with `@Configuration` and one or more `@Bean` methods; those beans are registered in the same application context and can be injected anywhere.
+
+---
+
 ## The Bean Context (ApplicationContext)
 
 The **application context** is the runtime container that holds and manages all beans. It:
