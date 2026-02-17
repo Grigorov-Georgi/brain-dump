@@ -37,6 +37,8 @@ nav:
     - "1. Snowflake ID": general/snowflake.md
   - Java:
     - "1. Java Knowledge": java/index.md
+  - Spring:
+    - "1. SpringBootApplication & Beans": spring/spring-boot-application-and-beans.md
   - Kubernetes:
     - "1. Building Blocks": k8s/building-block.md
     - "2. Service": k8s/services.md
