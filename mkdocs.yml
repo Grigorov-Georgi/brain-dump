@@ -39,6 +39,7 @@ nav:
     - "1. Java Knowledge": java/index.md
   - Spring:
     - "1. SpringBootApplication & Beans": spring/spring-boot-application-and-beans.md
+    - "2. JdbcTemplate": spring/jdbc-template.md
   - Kubernetes:
     - "1. Building Blocks": k8s/building-block.md
     - "2. Service": k8s/services.md
